@@ -4,6 +4,7 @@ const initialState = {
   value: 0,
 };
 const options = {
+  // the below name property will automatically be taken by type prop in action
   name: "counter",
   initialState,
   reducers: {
@@ -24,3 +25,6 @@ const options = {
 };
 
 const counterSlice = createSlice(options);
+// createSlice method returns an object and contains several properties such as .actions, .reducer
+export const { increment, incrementByAmount, decrement } = counterSlice.actions;
+export default counterSlice.reducer;
